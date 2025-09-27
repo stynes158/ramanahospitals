@@ -1,0 +1,38 @@
+body 
+{
+    font-family: 'Inter', sans-serif;
+    background-image: url(doctor.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+fieldset
+{
+    background-color: white;
+    height: 500px;
+    width: 26%;
+    border-radius: 20px;
+}
+
+.background-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #f9f9f9; 
+}
+     
+.sign-in-button 
+{
+    background-color: #24b48b;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.sign-in-button:hover 
+{
+    background-color: #1e9a78;
+}

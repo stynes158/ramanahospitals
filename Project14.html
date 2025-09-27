@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RVM</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Project14.css">
+</head>
+<body class="bg-gray-100 flex">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar flex flex-col p-4 shadow-lg z-50">
+        <div class="text-center">
+            <h1 class="text-xl font-bold text-white">RVM</h1>
+            <button id="close-sidebar" class="md:hidden text-white text-2xl focus:outline-none">
+                &times;
+            </button>
+        </div>
+        <nav class="mt-4 flex-grow overflow-y-auto">
+            <ul class="space-y-2">
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fa-solid fa-user"></i>  <span>Referral Membership</span>         
+                </li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    
+                    <span>Patient Records</span>           
+                </li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-university mr-3"></i>
+                    <span>Campaigns</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Vendor</li>
+                <br>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">MRD</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">  
+                    <i class="fas fa-door-open mr-3"></i>
+                    <span>MRD</span>
+                    <i class="fas fa-chevron-right ml-auto"></i>
+                </li> 
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Finance & Accounts</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-user-plus mr-3"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-file-invoice mr-3"></i>
+                    <span>Invoices</span>
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Help Desk</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-user-plus mr-3"></i>
+                    <span>Appointments</span>
+                </li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-comment-alt mr-3"></i>
+                    <span>Follow Up's</span>
+                </li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-headset mr-3"></i>
+                    <span>Service Desk</span>
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Settings</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-cog mr-3"></i>
+                    <span>General Settings</span>
+                </li>
+                <div class="mt-4 text-sm text-white">
+                    <p>V.1.10-PULSE</p>
+                </div>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content flex-1 flex flex-col">
+
+        <!-- Header -->
+        <header class="bg-white p-4 flex items-center justify-between shadow-sm sticky top-0">
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gray" class="bi bi-text-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                </svg>
+                <div class="relative w-64 md:w-80 hidden md:block">
+                    <input type="text" placeholder="Search" class="rounded-lg pl-10 py-2 bg-gray-100 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-8">
+                <div class="relative">
+                    <i class="fas fa-bed text-gray-600 text-xl cursor-pointer"></i>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-blue-500 rounded-full">1545</span>
+                </div>
+                <i class="fas fa-expand text-gray-600 text-xl cursor-pointer" title="Fullscreen"></i>
+                <i class="fas fa-moon text-gray-600 text-xl cursor-pointer"></i>
+                <div class="relative">
+                    <i class="fas fa-bell text-gray-600 text-xl cursor-pointer relative"></i>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">3</span>
+                </div>
+                <!-- Profile with Dropdown -->
+                <div class="relative">
+                    <button id="profile-btn" class="flex space-x-2 pl-4 bg-gray-100 px-4 py-2 rounded-lg items-center cursor-pointer hover:shadow-md transition-shadow focus:outline-none">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm33H4oB6TmwvmvFrJvXC0zjpI3tUsn40gsw&s" alt="Profile" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="hidden md:block">
+                            <p class="text-sm font-semibold">R.V.M Hospitals</p>
+                            <p class="text-xs text-gray-500">RVM15032501</p>
+                        </div>
+                            <i class="fas fa-chevron-down ml-2 text-gray-600"></i>
+                        </button>
+                    <!-- Dropdown -->
+                    <div id="dropdown" class="hidden absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow-lg">
+                        <button onclick="logout()" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-door-open"></i><a href="Project15.html">Log Out</a></button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <hr>
+        <header class="bg-white shadow-sm h-11">
+        <!-- Main content area -->
+        <div class="p-3 flex-grow overflow-auto">
+            <div class="flex justify-between items-center">
+                <h2 class="font-bold text-gray-800">Accounts & Finance</h2>
+                <div class="text-sm text-black">
+                    <span class="font-semibold cursor-pointer hover:text-silver">Dashboards</span> >
+                    <span class="font-semibold cursor-pointer hover:text-silver">Accounts & Finance</span> >
+                </div>
+            </div>
+        </header>
+        <br>
+            <div class="bg-white p-7 w-full max-w-6xl mx-auto shadow-md">
+                <div class="flex justify-between items-center mb-6 md:space-y-0">
+                    <div class="flex space-x-2">
+                        <button id="new-village-btn" class="bg-blue-900 text-white px-4 py-2 rounded-lg font-semibold transition-colors flex items-center">
+                            <i class="fas fa-user-plus mr-2"></i><a href="project6.html">Create UPI</a> 
+                        </button>
+                        <label class="bg-teal-500 text-white px-4 py-2 rounded-lg font-semibold cursor-pointer hover:bg-teal-600 transition-colors flex items-center">
+                            <i class="fas fa-file-download mr-2"></i> Import
+                            <input type="file" id="import-file" accept=".csv" class="hidden">
+                        </label>
+                        <button id="export-btn" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center">
+                            <i class="fas fa-file-export mr-2"></i> Export
+                        </button>
+                    </div>
+                    <div class="relative w-full md:w-auto">
+                        <input type="text" placeholder="Search." class="rounded-lg pl-2 pr-12 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="bg-blue-900 text-white">
+                                <td class="py-3 px-4 text-left font-semibold">S.No</td>
+                                <td class="py-3 px-4 text-left font-semibold">UPI Accountant Name</td>
+                                <td class="py-3 px-4 text-left font-semibold">UPI Name</td>
+                                <td class="py-3 px-4 text-left font-semibold">UPI ID</td>
+                                <td class="py-3 px-4 text-left font-semibold">UPI Phone Number</td>
+                                <td class="py-3 px-4 text-left font-semibold">UPI QR Code Image</td>
+                                <td class="py-3 px-4 text-left font-semibold">UPI Accountant Status</td>
+                                <td class="py-3 px-4 text-left font-semibold">Actions</td>
+                            </tr>
+                                <td class="py-3 px-4 text-left font-semibold">1</td>
+                                <td class="py-3 px-4 text-left font-semibold">RVM CHARITABLE HOSPITAL</td>
+                                <td class="py-3 px-4 text-left font-semibold">Phone Pay</td>
+                                <td class="py-3 px-4 text-left font-semibold">303915535043685@cnrb</td>
+                                <td class="py-3 px-4 text-left font-semibold">62814423328</td>
+                                <td class="py-3 px-4 text-left font-semibold"><img src="QR Code img.png.png"></td>
+                                <td> <span class="badge bg-success">Active</span></td>
+                                   <td class="py-3 px-4 flex space-x-2">
+                                  <button class="w-8 h-8 flex items-center justify-center bg-blue-900 text-white rounded-md hover:bg-blue-800"><a href="project7.html"></a><i class="fas fa-eye text-xs"></i></button>
+                                  <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-md hover:bg-blue-400"><i class="fas fa-pencil-alt text-xs"></i></button>
+                                  <button class="w-8 h-8 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-400"><i class="fas fa-trash text-xs"></i></button>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody id="villageTableBody"></tbody>
+                    </table>
+                </div>
+                <br>
+                <div id="pagination" class="flex justify-center items-center space-x-2 mt-4"></div>
+            </div>
+            <br>
+            <br>
+            <!-- Footer -->
+            <footer class="fixed bottom-0 w-[82%] bg-white shadow-sm p-5 text-sm text-gray-400 flex justify-between">
+                <p><span class="font-bold">R.V.M Hospitals</span> © Peramsons Software. All Rights Reserved.</p>
+                <p>Design & Develop By Peramsons Software</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modal for New Village -->
+    <div id="new-village-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden flex items-center justify-center p-4 z-50">
+        <div class="modal-content bg-white shadow-xl overflow-hidden animate-fade-in-down">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between p-4 bg-[#1e3a8a] text-white">
+                <h3 class="text-lg font-semibold">RVM CHARITABLE TRUST HOSPITAL</h3>
+                <button id="close-modal-btn" class="bg-white/50 rounded-sm h-25 w-25 pl-1 pr-1 text-black text-4xl transition-colors">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6">
+                <form class="space-y-4">
+                    <div>
+                        <label for="country" class="block text-sm font-medium text-gray-700">UPI Accountant Name <span class="text-red-500">*</span></label>
+                        <select id="country" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"></select>
+                    </div>
+                    <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700">UPI Name</label>
+                    <select id="status" class="w-full p-2 border rounded">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                    </div>
+                    <div>
+                        <label for="state" class="block text-sm font-medium text-gray-700">UPI ID <span class="text-red-500">*</span></label>
+                        <select id="state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"></select>
+                    </div>
+                    <div>
+                        <label for="city" class="block text-sm font-medium text-gray-700">UPI Phone Number <span class="text-red-500">*</span></label>
+                        <select id="city" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border"></select>
+                    </div>
+                    <div>
+                        <label for="village-name" class="block text-sm font-medium text-gray-700">UPI QR Code Image <span class="text-red-500">*</span></label>
+                        <input type="text" id="village-name"  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border">
+                    </div>
+                </form>
+            </div>
+        <!-- Modal Footer -->
+            <div class="p-4 flex justify-center space-x-2">
+                <button type="button" class="bg-blue-900 text-white px-4 py-2 rounded-lg font-semibold transition-colors">Save</button>
+                <button type="button" id="close-modal-footer-btn" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors">Close</button>
+            </div>
+
+    <script>
+    const locationData = 
+    {
+    "India": 
+    {
+        "Telangana": ["Hyderabad", "Siddipet", "Warangal"],
+        "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
+        "Andhra Pradesh": ["Visakhapatnam", "West Godavari", "East Godavari"]
+    },
+    "United States": {
+        "California": ["Los Angeles", "San Francisco", "San Diego"],
+        "Texas": ["Houston", "Dallas", "Austin"],
+        "New York": ["New York City", "Buffalo", "Rochester"]
+    },
+    "United Kingdom": {
+        "England": ["London", "Manchester", "Liverpool"],
+        "Scotland": ["Edinburgh", "Glasgow", "Aberdeen"],
+        "Wales": ["Cardiff", "Swansea", "Newport"]
+    },
+    "Australia": 
+    {
+        "New South Wales": ["Sydney", "Newcastle", "Wollongong"],
+        "Victoria": ["Melbourne", "Geelong", "Ballarat"],
+        "Queensland": ["Brisbane", "Gold Coast", "Cairns"]
+    }
+    };
+
+    // Populate Country, State, City
+    const countrySelect = document.getElementById("country");
+    const stateSelect = document.getElementById("state");
+    const citySelect = document.getElementById("city");
+
+    // Load countries
+    function loadCountries() {
+    countrySelect.innerHTML = `<option value="">Select Country</option>`;
+    Object.keys(locationData).forEach(country => {
+        const option = document.createElement("option");
+        option.value = country;
+        option.textContent = country;
+        countrySelect.appendChild(option);
+    });
+    }
+
+    // Load states based on country
+    countrySelect.addEventListener("change", () => {
+    const country = countrySelect.value;
+    stateSelect.innerHTML = `<option value="">Select State</option>`;
+    citySelect.innerHTML = `<option value="">Select City</option>`;
+    if (country && locationData[country]) {
+        Object.keys(locationData[country]).forEach(state => {
+        const option = document.createElement("option");
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+        });
+    }
+    });
+
+    // Load cities based on state
+    stateSelect.addEventListener("change", () => {
+    const country = countrySelect.value;
+    const state = stateSelect.value;
+    citySelect.innerHTML = `<option value="">Select City</option>`;
+    if (country && state && locationData[country][state]) {
+        locationData[country][state].forEach(city => {
+        const option = document.createElement("option");
+        option.value = city;
+        option.textContent = city;
+        citySelect.appendChild(option);
+        });
+    }
+    });
+
+    // Initialize countries on page load
+    loadCountries();
+
+    // Modal handling
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebarBtn = document.getElementById("close-sidebar");
+    const newVillageBtn = document.getElementById('new-village-btn');
+    const newVillageModal = document.getElementById('new-village-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const closeModalFooterBtn = document.getElementById('close-modal-footer-btn');
+
+    closeSidebarBtn.addEventListener("click", () => 
+    {
+    sidebar.classList.toggle("hidden");
+    });
+
+    // Show modal
+    newVillageBtn.addEventListener('click', () => 
+    {
+    editingRow = null; // ✅ Reset editing mode
+    // ✅ Clear all form fields
+    document.getElementById("country").value = "Select Country";
+    document.getElementById("state").value = "Select State";
+    document.getElementById("city").value = "Select City";
+    document.getElementById("village-name").value = "";
+    document.getElementById("status").value = "Active";
+    newVillageModal.classList.remove('hidden');
+    });
+
+    // Hide modal
+    const hideModal = () => 
+    {
+    newVillageModal.classList.add('hidden');
+    };
+
+    closeModalBtn.addEventListener('click', hideModal);
+    closeModalFooterBtn.addEventListener('click', hideModal);
+
+    // Close modal when clicking outside of it
+    newVillageModal.addEventListener('click', (e) => 
+    {
+    if (e.target === newVillageModal) {
+      hideModal();
+    }
+    });
+
+    // =========================
+    // Add New Village + Pagination
+    // =========================
+    const createBtn = document.querySelector("#new-village-modal button.bg-blue-900");
+    const villageTableBody = document.querySelector("tbody");
+    const paginationDiv = document.getElementById("pagination");
+    const rowsPerPage = 3; // rows per page
+    let currentPage = 1;
+
+    // Function to add new village
+    function addNewVillage() 
+    {
+    const country = document.getElementById("upi accountant name").value;
+    const state = document.getElementById("upi name").value;
+    const city = document.getElementById("upi ID").value;
+    const vName = document.getElementById("upi Phone Number").value;
+    const vShortName = document.getElementById("upi QR code image").value;
+    const status = document.getElementById("status").value;
+
+    if (country === "Select Country" || state === "Select State" || city === "Select City" || !vName || !vShortName) {
+        alert("Please fill all required fields!");
+        return;
+    }
+
+    const rowCount = villageTableBody.querySelectorAll("tr").length;
+    const newRow = document.createElement("tr");
+    const now = new Date();
+    const formattedDate = `${String(now.getDate()).padStart(2, '0')}-${String(now.getMonth()+1).padStart(2,'0')}-${now.getFullYear()} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+    newRow.classList.add("border-b", "border-gray-200");
+    newRow.innerHTML = `
+        <td class="py-3 px-4">${rowCount+1}</td>
+        <td class="py-3 px-4">${vName}</td>
+        <td class="py-3 px-4">${vShortName}</td>
+        <td class="py-3 px-4">${city}</td>
+        <td class="py-3 px-4">${state}</td>
+        <td class="py-3 px-4">${country}</td>
+        <td class="py-3 px-4"><span class="${status === 'Active' ? 'bg-teal-500 text-white px-2 py-1 rounded-lg text-xs font-semibold' : 'bg-red-500 text-white px-1 py-1 rounded-lg text-xs font-semibold'} ">${status}</span></td>
+        <td class="py-3 px-4">${formattedDate}</td>
+        <td class="py-3 px-4 flex space-x-2">
+            <button class="w-8 h-8 flex items-center justify-center bg-blue-900 text-white rounded-md hover:bg-blue-800"><i class="fas fa-eye text-xs"></i></button>
+            <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-md hover:bg-blue-400"><i class="fas fa-pencil-alt text-xs"></i></button>
+            <button class="w-8 h-8 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-400"><i class="fas fa-trash text-xs"></i></button>
+        </td>
+    `;
+
+    villageTableBody.appendChild(newRow);
+    addRowEvents(newRow);
+    updateSerialNumbers();
+    currentPage = Math.ceil((rowCount + 1) / rowsPerPage); // Go to last page
+
+    // Reset form
+    document.getElementById("country").value = "Select Country";
+    document.getElementById("state").value = "Select State";
+    document.getElementById("city").value = "Select City";
+    document.getElementById("village-name").value = "";
+    document.getElementById("village-short-name").value = "";
+
+    hideModal();
+    handlePagination();
+    }
+
+    // Global variable
+    let editingRow = null;
+
+    // ==============================
+    // Local Storage Save / Load
+    // ==============================
+    function saveVillagesToStorage() {
+        const rows = Array.from(villageTableBody.querySelectorAll("tr"));
+        const data = rows.map(row => {
+            return {
+                sno: row.children[0].innerText,
+                villageName: row.children[1].innerText,
+                shortName: row.children[2].innerText,
+                city: row.children[3].innerText,
+                state: row.children[4].innerText,
+                country: row.children[5].innerText,
+                status: row.children[6].innerText.trim(),
+                created: row.children[7].innerText
+            };
+        });
+        localStorage.setItem("villages", JSON.stringify(data));
+    }
+
+    function loadVillagesFromStorage() {
+        const stored = JSON.parse(localStorage.getItem("villages")) || [];
+        stored.forEach(v => {
+            const newRow = document.createElement("tr");
+            newRow.classList.add("border-b", "border-gray-200");
+            newRow.innerHTML = `
+                <td class="py-3 px-4">${v.sno}</td>
+                <td class="py-3 px-4">${v.villageName}</td>
+                <td class="py-3 px-4">${v.shortName}</td>
+                <td class="py-3 px-4">${v.city}</td>
+                <td class="py-3 px-4">${v.state}</td>
+                <td class="py-3 px-4">${v.country}</td>
+                <td class="py-3 px-4">
+                <span class="${v.status === 'Active' 
+                    ? 'bg-teal-500 text-white px-2 py-1 rounded-lg text-xs font-semibold' 
+                    : 'bg-red-500 text-white px-1 py-1 rounded-lg text-xs font-semibold'}">
+                    ${v.status}
+                </span>
+                </td>
+                <td class="py-3 px-4">${v.created}</td>
+                <td class="py-3 px-4 flex space-x-2">
+                    <button class="w-8 h-8 flex items-center justify-center bg-blue-900 text-white rounded-md hover:bg-blue-800"><i class="fas fa-eye text-xs"></i></button>
+                    <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-md hover:bg-blue-400"><i class="fas fa-pencil-alt text-xs"></i></button>
+                    <button class="w-8 h-8 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-400"><i class="fas fa-trash text-xs"></i></button>
+                </td>
+            `;
+            villageTableBody.appendChild(newRow);
+            addRowEvents(newRow);
+        });
+        updateSerialNumbers();
+        handlePagination();
+    }
+
+
+    function addRowEvents(row) 
+    {
+    // Delete row
+    row.querySelector(".fa-trash").closest("button").addEventListener("click", () => {
+        if (confirm("Are you sure you want to delete this village?")) {
+            row.remove();
+            updateSerialNumbers();
+            handlePagination();
+            saveVillagesToStorage();
+        }
+    });
+
+    // Edit row
+    row.querySelector(".fa-pencil-alt").closest("button").addEventListener("click", () => {
+        editingRow = row; // Save row globally
+
+        // Pre-fill modal
+        document.getElementById("country").value = row.children[5].innerText;
+        document.getElementById("state").value = row.children[4].innerText;
+        document.getElementById("city").value = row.children[3].innerText;
+        document.getElementById("village-name").value = row.children[1].innerText;
+        document.getElementById("village-short-name").value = row.children[2].innerText;
+        document.getElementById("status").value = row.children[6].innerText.trim();
+        newVillageModal.classList.remove("hidden");
+    });
+
+    // View row
+    row.querySelector(".fa-eye").closest("button").addEventListener("click", () => 
+        {
+            alert
+            (
+                `Village: ${row.children[1].innerText}\n` +
+                `Short Name: ${row.children[2].innerText}\n` +
+                `City: ${row.children[3].innerText}\n` +
+                `State: ${row.children[4].innerText}\n` +
+                `Country: ${row.children[5].innerText}\n` +
+                `Status: ${row.children[6].innerText}\n` +
+                `Created: ${row.children[7].innerText}`
+            );
+        });
+    }
+
+    createBtn.addEventListener("click", () => 
+    {
+    if (editingRow) 
+    {
+    editingRow.children[1].innerText = document.getElementById("village-name").value;
+    editingRow.children[2].innerText = document.getElementById("village-short-name").value;
+    editingRow.children[3].innerText = document.getElementById("city").value;
+    editingRow.children[4].innerText = document.getElementById("state").value;
+    editingRow.children[5].innerText = document.getElementById("country").value;
+    const status = document.getElementById("status").value;
+    editingRow.children[6].innerHTML = `<span class="${status === 'Active' ? 'bg-teal-500 text-white px-2 py-1 rounded-lg text-xs font-semibold' : 'bg-red-500 text-white px-1 py-1 rounded-lg text-xs font-semibold'} ">${status}</span>`;
+    editingRow = null;
+    } 
+    else 
+    {
+    addNewVillage();
+    }
+    saveVillagesToStorage();
+    hideModal();
+    });
+
+    function updateSerialNumbers() 
+    {
+    const rows = Array.from(villageTableBody.querySelectorAll("tr"));
+    rows.forEach((row, index) => 
+    {
+        row.children[0].innerText = index + 1;
+    });
+    }
+
+    function handlePagination() {
+    const allRows = Array.from(villageTableBody.querySelectorAll("tr"));
+    const totalPages = Math.ceil(allRows.length / rowsPerPage);
+
+    // Hide all rows first
+    allRows.forEach((row) => row.classList.add("hidden"));
+
+    // Show only current page rows
+    const start = (currentPage - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    allRows.slice(start, end).forEach((row) => row.classList.remove("hidden"));
+
+    // Update pagination buttons
+    paginationDiv.innerHTML = `
+      <button onclick="prevPage()" class="bg-gray-100 px-3 py-1 rounded-lg 
+      ${currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-300"}">Previous</button>
+      ${Array.from({ length: totalPages }, (_, i) => `
+        <button onclick="goToPage(${i + 1})" class="px-3 py-1 rounded-lg ${
+          i + 1 === currentPage
+            ? "bg-blue-900 text-white"
+            : "bg-gray-100 hover:bg-gray-300"
+        }">${i + 1}</button>
+        `).join("")}
+        <button onclick="nextPage(${totalPages})" class="bg-gray-100 px-3 py-1 rounded-lg ${
+        currentPage === totalPages
+          ? "opacity-50 cursor-not-allowed"
+          : "hover:bg-gray-300"
+        }">Next</button>
+        `;
+    }
+
+    function prevPage() 
+    {
+    if (currentPage > 1) 
+    {
+        currentPage--;
+        handlePagination();
+    }
+    }
+
+    function nextPage(totalPages) 
+    {
+    if (currentPage < totalPages) 
+    {
+      currentPage++;
+      handlePagination();
+    }
+    }
+
+    function goToPage(page) 
+    {
+        currentPage = page;
+        handlePagination();
+    }
+
+    // Initialize pagination on page load
+    handlePagination();
+    
+
+    // =========================
+    // Profile Dropdown + Logout
+    // =========================
+    const profileBtn = document.getElementById("profile-btn");
+    const dropdown = document.getElementById("dropdown");
+
+    // Toggle dropdown on click
+    profileBtn.addEventListener("click", () => 
+    {
+        dropdown.classList.toggle("hidden");
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener("click", (e) => 
+    {
+    if (!profileBtn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add("hidden");
+    }
+    });
+
+    // Logout function
+    function logout() 
+    {
+    window.location.href = "login.html";
+    }
+
+    // Import CSV File
+    const importFileInput = document.getElementById("import-file");
+    importFileInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const text = e.target.result;
+        const rows = text.split("\n").map(row => row.split(","));
+
+        rows.forEach((cols, index) => {
+            if (index === 0 || cols.length < 5) return; // skip header or empty
+            const newRow = document.createElement("tr");
+            newRow.classList.add("border-b", "border-gray-200");
+            newRow.innerHTML = `
+                <td class="py-3 px-4">${villageTableBody.querySelectorAll("tr").length + 1}</td>
+                <td class="py-3 px-4">${cols[0]}</td>
+                <td class="py-3 px-4">${cols[1]}</td>
+                <td class="py-3 px-4">${cols[2]}</td>
+                <td class="py-3 px-4">${cols[3]}</td>
+                <td class="py-3 px-4">${cols[4]}</td>
+                <td class="py-3 px-4"><span class="bg-teal-500 text-white px-2 py-1 rounded-lg text-xs font-semibold">Active</span></td>
+                <td class="py-3 px-4">${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</td>
+                <td class="py-3 px-4 flex space-x-2">
+                    <button class="w-8 h-8 flex items-center justify-center bg-blue-900 text-white rounded-md hover:bg-blue-800"><i class="fas fa-eye text-xs"></i></button>
+                    <button class="w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-md hover:bg-blue-400"><i class="fas fa-pencil-alt text-xs"></i></button>
+                    <button class="w-8 h-8 flex items-center justify-center bg-red-500 text-white rounded-md hover:bg-red-400"><i class="fas fa-trash text-xs"></i></button>
+                </td>
+            `;
+            villageTableBody.appendChild(newRow);
+            addRowEvents(newRow);
+            updateSerialNumbers();
+            });
+            handlePagination();
+        };
+        reader.readAsText(file);
+    });
+
+    // Export Table to CSV
+    document.getElementById("export-btn").addEventListener("click", () => 
+    {
+    let csv = [];
+    const rows = document.querySelectorAll("tbody tr");
+    rows.forEach(row => {
+        const cells = row.querySelectorAll("td"); // ✅ only data cells
+        const cols = Array.from(cells).slice(0, -1); // Exclude last column (Actions)
+        const rowData = [];
+        cols.forEach(col => rowData.push(col.innerText));
+        csv.push(rowData.join(","));
+    });
+    const csvFile = new Blob([csv.join("\n")], { type: "text/csv" });
+    const downloadLink = document.createElement("a");
+    downloadLink.href = URL.createObjectURL(csvFile);
+    downloadLink.download = "villages.csv";
+    downloadLink.click();
+    });
+
+    // Search Functionality
+    const searchInput = document.querySelector('input[placeholder="Search."]');
+    searchInput.addEventListener("input", () => {
+    const filter = searchInput.value.toLowerCase();
+    const rows = Array.from(villageTableBody.querySelectorAll("tr"));
+    rows.forEach((row) => 
+        {
+        const cells = Array.from(row.querySelectorAll("td"));
+        const rowText = cells.map(c => c.innerText.toLowerCase()).join(" ");
+        if (rowText.includes(filter)) 
+        {
+            row.classList.remove("hidden");
+        } else 
+        {
+            row.classList.add("hidden");
+        }
+        });
+    });
+
+    // Initialize action buttons for pre-existing rows
+    document.querySelectorAll("tbody tr").forEach(row => addRowEvents(row));
+
+    // Load villages from local storage on page load
+    loadVillagesFromStorage();
+    </script>
+
+</body>
+</html>
+        
+           

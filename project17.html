@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project17.css">
+</head>
+<body class="bg-gray-100 flex">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar flex flex-col p-4 shadow-lg z-50">
+        <div class="text-center">
+            <h1 class="text-xl font-bold text-white">RVM</h1>
+            <button id="close-sidebar" class="md:hidden text-white text-2xl focus:outline-none">
+                &times;
+            </button>
+        </div>
+        <nav class="mt-4 flex-grow overflow-y-auto">
+            <ul class="space-y-2">
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">MENU</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-home mr-3"></i>
+                    <a href="Project14.html" class="flex-1 text-white">Dashboard</a>
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">OPD</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-user-plus mr-3"></i>
+                    <span>Patient Registration</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">EMERGENCY</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-ambulance mr-3"></i>
+                    <span>Emergency Patient</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">HELP DESK</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-headset mr-3"></i>
+                    <span>Service Desk</span>
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Diagnostics</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-flask mr-3"></i>
+                    <span>Centres</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Human Resource Management</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-users mr-3"></i>
+                    <span>Employees</span>           
+                </li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-sitemap mr-3"></i>
+                    <span>Unit Management</span>           
+                </li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    <span>Trainings</span>           
+                </li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-notes-medical mr-3"></i>
+                    <span>Health Reports</span>           
+                </li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-syringe mr-3"></i>
+                    <span>Vaccination</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Placements</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-building mr-3"></i>
+                    <span>placement</span>           
+                </li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-clipboard-list mr-3"></i>
+                    <span>Interviews</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Referral Agents</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-user-friends mr-3"></i>
+                    <span>Referral Membership</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Patients Management</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-file-medical mr-3"></i>
+                    <span>Patient Records</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Marketing & Campaign</li>
+                <li class="nav-item items-center p-3 rounded-lg hover:bg-gray-800 transition-colors"> 
+                    <i class="fas fa-bullhorn mr-3"></i>
+                    <span>Campaigns</span>           
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Vendor</li>
+                <br>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">MRD</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">  
+                    <i class="fas fa-door-open mr-3"></i>
+                    <span>MRD</span>
+                    <i class="fas fa-chevron-right ml-auto"></i>
+                </li> 
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Finance & Accounts</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-user-plus mr-3"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-file-invoice mr-3"></i>
+                    <span>Invoices</span>
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Help Desk</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-user-plus mr-3"></i>
+                    <span>Appointments</span>
+                </li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-comment-alt mr-3"></i>
+                    <span>Follow Up's</span>
+                </li>
+                <li class="mt-4 text-xs uppercase font-semibold text-gray-500">Settings</li>
+                <li class="nav-item cursor-pointer flex items-center p-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-cog mr-3"></i>
+                    <a href="generalsettings.html" class="flex-1 text-white text-white w-full no-slide">General Settings</a>
+                </li>
+                <div class="mt-4 text-sm text-white">
+                    <p>V.1.10-PULSE</p>
+                </div>
+            </ul>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <div class="main-content flex-1 flex flex-col">
+        <!-- Header -->
+        <header class="bg-white p-4 flex items-center justify-between shadow-sm sticky top-0">
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gray" class="bi bi-text-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                </svg>
+                <div class="relative w-64 md:w-80 hidden md:block">
+                    <input type="text" placeholder="Search" class="rounded-lg pl-10 py-2 bg-gray-100 border border-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            <div class="flex items-center space-x-8">
+                <div class="relative">
+                    <i class="fas fa-bed text-gray-600 text-xl cursor-pointer"></i>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-blue-500 rounded-full">1545</span>
+                </div>
+                <i class="fas fa-expand text-gray-600 text-xl cursor-pointer" title="Fullscreen"></i>
+                <i class="fas fa-moon text-gray-600 text-xl cursor-pointer"></i>
+                <div class="relative">
+                    <i class="fas fa-bell text-gray-600 text-xl cursor-pointer relative"></i>
+                    <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">3</span>
+                </div>
+                <!-- Profile with Dropdown -->
+                <div class="relative">
+                    <button id="profile-btn" class="flex space-x-2 pl-4 bg-gray-100 px-4 py-2 rounded-lg items-center cursor-pointer hover:shadow-md transition-shadow focus:outline-none">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm33H4oB6TmwvmvFrJvXC0zjpI3tUsn40gsw&s" alt="Profile" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="hidden md:block">
+                            <p class="text-sm font-semibold">R.V.M Hospitals</p>
+                            <p class="text-xs text-gray-500">RVM15032501</p>
+                        </div>
+                            <i class="fas fa-chevron-down ml-2 text-gray-600"></i>
+                        </button>
+                    <!-- Dropdown -->
+                    <div id="dropdown" class="hidden absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow-lg">
+                        <button onclick="logout()" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fas fa-sign-out mr-2"></i>Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <hr>
+        <header class="bg-white shadow-sm h-11">
+        <!-- Main content area -->
+        <div class="p-3 flex-grow overflow-auto">
+            <div class="flex justify-between items-center">
+                <h2 class="font-bold text-gray-800">DASHBOARD</h2>
+                <div class="text-sm text-black">
+                    <span class="font-semibold text-gray-500">Dashboards</span>
+                </div>
+            </div>
+        </header>
+        <br>
+        <!-- Dashboard Cards -->
+         <div class="container mx-auto p-4 space-y-4">
+        <!-- Registrations -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white shadow rounded p-4 text-center">
+            <h6 class="text-gray-500">REGISTRATIONS</h6>
+            <h4 class="text-2xl font-bold">7.46k</h4>
+            <small class="text-gray-400">Male | Female</small>
+            </div>
+            <div class="bg-white shadow rounded p-4 text-center">
+            <h6 class="text-gray-500">REGISTRATIONS</h6>
+            <h4 class="text-2xl font-bold">7.46k</h4>
+            <small class="text-gray-400">Walkin | D Care | Emerg</small>
+            </div>
+            <div class="bg-white shadow rounded p-4 text-center">
+            <h6 class="text-gray-500">STAFF INFO</h6>
+            <h4 class="text-2xl font-bold">19.52k</h4>
+            <small class="text-green-500">+3.67%</small>
+            </div>
+        </div>
+
+        <!-- More Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white shadow rounded p-4">
+            <h6 class="text-gray-700 font-semibold mb-2">Consultants</h6>
+            <p class="text-sm text-gray-400 mb-1">How Does Link Tracking Works?</p>
+            <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="bg-white shadow rounded p-4">
+            <h6 class="text-gray-700 font-semibold mb-2">Department Info</h6>
+            <ul class="list-none space-y-1">
+                <li class="flex justify-between"><span>Human Resource</span> <span class="text-gray-400">100 Members</span></li>
+                <li class="flex justify-between"><span>Finance</span> <span class="text-gray-400">10 Members</span></li>
+                <li class="flex justify-between"><span>Administration</span> <span class="text-gray-400">800 Members</span></li>
+                <li class="flex justify-between"><span>IT</span> <span class="text-gray-400">50 Members</span></li>
+                <li class="flex justify-between"><span>Medical</span> <span class="text-gray-400">600 Members</span></li>
+            </ul>
+            </div>
+            <div class="bg-white shadow rounded p-4">
+            <h6 class="text-gray-700 font-semibold mb-2">Team Management</h6>
+            <ul class="list-none space-y-1">
+                <li class="flex justify-between"><span>Pediatrician</span> <span class="text-gray-400">5 Mem</span></li>
+                <li class="flex justify-between"><span>Psychologist</span> <span class="text-gray-400">25 Mem</span></li>
+                <li class="flex justify-between"><span>Cardiology</span> <span class="text-gray-400">5 Mem</span></li>
+                <li class="flex justify-between"><span>Dermatologists</span> <span class="text-gray-400">10 Mem</span></li>
+            </ul>
+            </div>
+        </div>
+
+        <!-- Finance Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white shadow rounded p-4 text-center">
+            <h6 class="text-gray-700">Total Revenue</h6>
+            <h4 class="text-2xl font-bold">₹2.39k</h4>
+            <span class="text-green-500">+6.24%</span>
+            </div>
+            <div class="bg-white shadow rounded p-4 text-center">
+            <h6 class="text-gray-700">Total Expenditure</h6>
+            <h4 class="text-2xl font-bold">₹19.52k</h4>
+            <span class="text-green-500">+3.67%</span>
+            </div>
+            <div class="bg-white shadow rounded p-4 text-center">
+            <h6 class="text-gray-700">Total Pending</h6>
+            <h4 class="text-2xl font-bold">₹14.80k</h4>
+            <span class="text-red-500">-4.80%</span>
+            </div>
+        </div>
+
+
+    <script>
+    // =========================
+    // Profile Dropdown + Logout
+    // =========================
+    const profileBtn = document.getElementById("profile-btn");
+    const dropdown = document.getElementById("dropdown");
+
+    // Toggle dropdown on click
+    profileBtn.addEventListener("click", () => 
+    {
+        dropdown.classList.toggle("hidden");
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener("click", (e) => 
+    {
+    if (!profileBtn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add("hidden");
+    }
+    });
+
+    // Logout function
+    function logout() 
+    {
+    window.location.href = "login.html";
+    }
+    </script>

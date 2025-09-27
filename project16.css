@@ -1,0 +1,28 @@
+html, body {
+  height: 100%;
+}
+
+.main-content > .p-3 
+{
+  flex-grow: 1;
+}
+
+footer 
+{
+  margin-bottom: auto;
+}
+
+body 
+{
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+        
+.sidebar 
+{
+    width: 280px;
+    min-height: 100vh;
+    background-color: #284083;
+    color: #b0b8c6;
+    transition: all 0.3s ease;
+}
